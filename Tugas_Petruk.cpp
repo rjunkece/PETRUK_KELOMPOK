@@ -39,3 +39,45 @@ bool cariVertikal(const vector<string>& matriks, const string& kata) {
     }
     return false;
 }
+//Bagian Indah Febriana Della
+bool cariDiagonal(const vector<string>& matriks, const string& kata) {
+    int jumlahBaris = matriks.size();
+    int jumlahKolom = matriks[0].size();
+    for (int startBaris = 0; startBaris < jumlahBaris; ++startBaris) {
+        for (int startKolom = 0; startKolom < jumlahKolom; ++startKolom) {
+            string diagonal = "";
+            int baris = startBaris;
+            int kolom = startKolom;
+            while (baris < jumlahBaris && kolom < jumlahKolom) {
+                diagonal += matriks[baris][kolom];
+                ++baris;
+                ++kolom;
+            }
+            if (keHurufKecil(diagonal).find(kata) != string::npos) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool cariDiagonalTerbalik(const vector<string>& matriks, const string& kata) {
+    int jumlahBaris = matriks.size();
+    int jumlahKolom = matriks[0].size();
+    for (int startBaris = jumlahBaris - 1; startBaris >= 0; --startBaris) {
+        for (int startKolom = 0; startKolom < jumlahKolom; ++startKolom) {
+            string diagonal = "";
+            int baris = startBaris;
+            int kolom = startKolom;
+            while (baris >= 0 && kolom < jumlahKolom) {
+                diagonal += matriks[baris][kolom];
+                --baris;
+                ++kolom;
+            }
+            if (keHurufKecil(diagonal).find(kata) != string::npos) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
