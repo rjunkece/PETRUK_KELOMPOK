@@ -81,3 +81,51 @@ bool cariDiagonalTerbalik(const vector<string>& matriks, const string& kata) {
     }
     return false;
 }
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector<string> matrix = {
+        "AAFLKHPFSSUFICICLESGNNΗ",
+        "SFVREOMRWLRTTSXOQQNAOAO",
+        "QEIAIFXAEIRFVFYSXIMINJI",
+        "WSTRLGOCAPBIAFIWIWTUACM",
+        "FEYAEAISTPCRLUJKOAKCERS",
+        "RVDAKPNDEEHDEMSNCKKFOAH",
+        "MRNEDSLCRRIWNRSAAFITMMI",
+        "YAAECIEAHYMOTAVHRSSTISB",
+        "RJSEWELCCENNIETOHWSGLSE",
+        "ΑΤΑΝΥΥΜΟIEESNESIOIRELTR",
+        "UTENEWEBHMYBETNNRAIEBEN",
+        "RCLKUTEAEQJLSGSHTGDSKOA",
+        "BHOICATNRRSDDECEHOOLGIT",
+        "ENSLUARIRSETALOCOHCTOHE",
+        "FZFUDQJYMADOYIWYGLOVESU",
+        "TEKALFWONSNAEBMIEJTZNTG",
+        "ESWPOSJXEUTUYOZUWAKΕΖΗΜ",
+        "KZUHΒΡΕΖEERFLMSNOWBALLH",
+        "NSNOWBOARDYTVWYCLEVOHSA",
+        "ACOCRQLGZIYCHODRAZZILBI",
+        "LBVKKWANZAAQINWOLPWONSL",
+        "BFREEZINGRAINSLILGTMELT",
+        "HQPYLWHFMNFFUFPSWXNUMMV"
+    };
+
+   
+    for (int i = 0; i < N; ++i) {
+        string word;
+        cin >> word;
+        bool found = searchHorizontal(matrix, toLowerCase(word)) || 
+                     searchVertical(matrix, toLowerCase(word)) || 
+                     searchDiagonal(matrix, toLowerCase(word)) ||
+                     searchReverseDiagonal(matrix, toLowerCase(word));
+        if (found) {
+            cout << "Ada" << endl;
+        } else {
+            cout << "Tidak Ada" << endl;
+        }
+    }
+
+    return 0;
+}
