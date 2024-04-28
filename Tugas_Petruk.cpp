@@ -1,3 +1,8 @@
+//Kelompok 7
+//Arjuna Gunatama Sihombing (2317051085)
+//Muhammad Zidane Dako (2357051005)
+//Indah Febriana Della (2317051066)
+
 #include <iostream>
 #include <vector>
 #include <string>
